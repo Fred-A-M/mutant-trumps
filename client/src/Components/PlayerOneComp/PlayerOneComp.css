@@ -1,0 +1,17 @@
+.card-container {
+  position: relative;
+  width: 300px;
+  /* height: 450px; */
+}
+
+.card-pile {
+  position: relative;
+}
+
+.card-back {
+  position: absolute;
+}
+
+.current-card {
+  position: absolute;
+}

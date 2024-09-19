@@ -1,0 +1,24 @@
+.end-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.end-menu-button {
+  border: 2px solid rgb(84, 84, 84);
+  border-radius: 15px;
+  padding: 5px;
+  background-color: rgb(34, 34, 34);
+}
+
+.end-menu-button:hover {
+  color: greenyellow;
+  cursor: pointer;
+}
+
+.winner-text {
+  font-size: 50px;
+}

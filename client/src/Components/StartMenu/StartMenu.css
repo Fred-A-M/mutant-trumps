@@ -1,0 +1,27 @@
+.start-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.start-menu-button {
+  border: 2px solid rgb(84, 84, 84);
+  border-radius: 15px;
+  padding: 5px;
+  background-color: rgb(34, 34, 34);
+}
+
+.start-menu-button:hover {
+  color: greenyellow;
+  cursor: pointer;
+}
+
+
+.logo img {
+  border-radius: 15px;
+}

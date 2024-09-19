@@ -1,0 +1,19 @@
+.game-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  min-width: 800px;
+  max-width: 1000px;
+}

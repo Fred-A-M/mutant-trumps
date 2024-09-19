@@ -1,0 +1,47 @@
+.card-body {
+  border: 2px solid rgb(63, 63, 63);
+  border-radius: 10px;
+  height: 460px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(34, 35, 34);
+  /* padding: 10px; */
+}
+
+.trump-picture {
+  border: 2px solid rgb(63, 63, 63);
+  border-radius: 10px;
+  height: 250px;
+  width: 250px;
+  margin-top: 10px;
+}
+
+.trump-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; 
+}
+
+.attribute:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.attribute.highlightp1WinP1Turn {
+  color: rgb(60, 255, 0);
+}
+
+.attribute.highlightp2WinP1Turn {
+  color: rgb(255, 0, 0);
+}
+
+.attribute.highlightp2WinP2Turn {
+  color: rgb(60, 255, 0);
+}
+
+.attribute.highlightp1WinP2Turn {
+  color: rgb(255, 0, 0);
+}
