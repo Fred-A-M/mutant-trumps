@@ -8,3 +8,14 @@ export function shuffleArray(array) {
   }
   return array;
 }
+
+export function bestAttribute(card) {
+  const choices = card.attributes;
+  const values = Object.values(choices);
+  const max = Math.max(...values);
+  for (const property in choices) {
+    if (choices[property] === max) {
+      return property;
+    }
+  }
+}

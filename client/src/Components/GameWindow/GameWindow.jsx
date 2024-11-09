@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { shuffleArray } from '../../functions';
+import { shuffleArray, bestAttribute } from '../../functions';
 import PlayerOneComp from '../PlayerOneComp/PlayerOneComp'
 import PlayerTwoComp from '../PlayerTwoComp/PlayerTwoComp'
 import EndMenu from '../EndMenu/EndMenu';
 import './GameWindow.css'
+import { cards } from '../../cards';
 
 export default function GameWindow ({numCards, changeState}) {
   const [cardList, setCardList] = useState([]);
@@ -19,15 +20,10 @@ export default function GameWindow ({numCards, changeState}) {
   const [losingCard, setLosingCard] = useState(false);
   const [comparedAttribute, setComparedAttribute] = useState(null);
 
-  async function fetchCards() {
-    try {
-      const res = await fetch('http://localhost:3000/cards')
-      const data = await res.json();
-      shuffleArray(data)
-      setCardList(data.slice(0, numCards));
-    } catch (err) {
-      console.log(err);
-    }
+  function fetchCards() {
+      const pack = cards;
+      shuffleArray(pack)
+      setCardList(pack.slice(0, numCards));
   }
 
   useEffect(() =>{
@@ -65,10 +61,19 @@ export default function GameWindow ({numCards, changeState}) {
     }
   }, [playerOneDeck, playerTwoDeck, decksInitialised])
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (!activePlayer) {
+        const best = bestAttribute(playerTwoCard);
+        compareCards(best);
+      }
+    }, 2500);
+  }, [activePlayer, playerTwoCard]);
+
 
   function compareCards(attribute) {
-    const playerOneValue = playerOneCard[attribute];
-    const playerTwoValue = playerTwoCard[attribute];
+    const playerOneValue = playerOneCard.attributes[attribute];
+    const playerTwoValue = playerTwoCard.attributes[attribute];
 
     if (playerOneDeck.length > 0 && playerTwoDeck.length > 0) {
       if (playerOneValue > playerTwoValue) {
@@ -109,5 +114,4 @@ export default function GameWindow ({numCards, changeState}) {
     </div>
     </>
   )
-
 }

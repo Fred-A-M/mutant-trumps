@@ -21,7 +21,7 @@ export default function CardComp ({card, compareCards, comparedAttribute, active
       ${!activePlayer && comparedAttribute === 'sizep1Win' ? 'highlightp1WinP2Turn' : ''}
       ${!activePlayer && comparedAttribute === 'sizep2Win' ? 'highlightp2WinP2Turn' : ''}`}
       onClick={() => compareCards('size')}>
-        Size: {card.size}
+        Size: {card.attributes.size}
       </div>
       <div className={`attribute 
       ${activePlayer && comparedAttribute === 'strengthp1Win' ? 'highlightp1WinP1Turn' : ''}
@@ -29,7 +29,7 @@ export default function CardComp ({card, compareCards, comparedAttribute, active
       ${!activePlayer && comparedAttribute === 'strengthp1Win' ? 'highlightp1WinP2Turn' : ''}
       ${!activePlayer && comparedAttribute === 'strengthp2Win' ? 'highlightp2WinP2Turn' : ''}`}
       onClick={() => compareCards('strength')}>
-        Strength: {card.strength}
+        Strength: {card.attributes.strength}
       </div>
       <div className={`attribute
       ${activePlayer && comparedAttribute === 'intelligencep1Win' ? 'highlightp1WinP1Turn' : ''}
@@ -37,7 +37,7 @@ export default function CardComp ({card, compareCards, comparedAttribute, active
       ${!activePlayer && comparedAttribute === 'intelligencep1Win' ? 'highlightp1WinP2Turn' : ''}
       ${!activePlayer && comparedAttribute === 'intelligencep2Win' ? 'highlightp2WinP2Turn' : ''}`}
       onClick={() => compareCards('intelligence')}>
-        Intelligence: {card.intelligence}
+        Intelligence: {card.attributes.intelligence}
       </div>
     </div>
     </>
