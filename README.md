@@ -63,7 +63,7 @@ Attribute Comparison: Each mutant card has three main attributes (e.g., Size, St
 
 Winning the Game: A player wins by taking all the other player’s cards.
 
-##Technologies Used
+## Technologies Used
 React.js: Frontend library for building user interfaces.
 
 JavaScript: Core game logic.
