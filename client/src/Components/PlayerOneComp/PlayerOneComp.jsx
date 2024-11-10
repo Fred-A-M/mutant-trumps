@@ -5,8 +5,7 @@ import './PlayerOneComp.css';
 
 export default function PlayerOneComp ({cardList, compareCards, card, activePlayer, losingCard, comparedAttribute}) {
   const offset = cardList.length * 6;
-
-
+  const player = 'player1'
   return (
     <>
     <div className='card-container'>
@@ -16,7 +15,7 @@ export default function PlayerOneComp ({cardList, compareCards, card, activePlay
         ))}
       </div>
       <div className='current-card' style={{ top: `${offset}px`, left: `${offset}px` }}>
-        {activePlayer || losingCard ? <CardComp card={card} compareCards={compareCards} activePlayer={activePlayer} comparedAttribute={comparedAttribute}/> : <CardRear /> }
+        {activePlayer || losingCard ? <CardComp card={card} player={player} compareCards={compareCards} activePlayer={activePlayer} comparedAttribute={comparedAttribute}/> : <CardRear /> }
       </div>
     </div>
     </>

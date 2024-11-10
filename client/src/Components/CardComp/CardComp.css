@@ -3,29 +3,69 @@
   border-radius: 10px;
   height: 460px;
   width: 310px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: rgb(34, 35, 34);
-  /* padding: 10px; */
+  background-color: rgb(30, 30, 30);
 }
 
-.trump-picture {
-  border: 2px solid rgb(63, 63, 63);
-  border-radius: 10px;
-  height: 250px;
-  width: 250px;
-  margin-top: 10px;
-}
-
-.trump-picture img {
+.card-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px; 
+  position: absolute;
+  opacity: 0.07;
 }
 
-.attribute:hover {
+.card-content {
+  border: 2px solid rgb(88, 88, 88);
+  border-radius: 10px;
+  height: 90%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.trump-picture {
+  position: relative;
+  align-items: center;
+  text-align: center;
+}
+
+.trump-picture img {
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px; 
+}
+
+.title {
+  font-size: x-large;
+  position: absolute;
+  width: 90%;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.attribute {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.attribute.active-hover:hover {
   border: 1px solid white;
   cursor: pointer;
 }

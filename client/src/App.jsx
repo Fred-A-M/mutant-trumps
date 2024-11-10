@@ -18,9 +18,6 @@ function changeCards (number) {
   return (
     <>
     <div className='main-container'>
-      {/* <div className='logo'>
-        <img src="./src/assets/logo.jpeg" alt="logo" width={100} />
-      </div> */}
       <div className='cards-window'>
         {state === 'start' ?
         <StartMenu changeState={changeState} changeCards={changeCards} /> : 

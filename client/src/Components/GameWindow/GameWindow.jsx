@@ -62,12 +62,12 @@ export default function GameWindow ({numCards, changeState}) {
   }, [playerOneDeck, playerTwoDeck, decksInitialised])
 
   useEffect(() => {
-    setTimeout(() => {
-      if (!activePlayer) {
+    if (!activePlayer) {
+      setTimeout(() => {
         const best = bestAttribute(playerTwoCard);
         compareCards(best);
-      }
-    }, 2500);
+      }, 2000);
+    }
   }, [activePlayer, playerTwoCard]);
 
 
