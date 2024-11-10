@@ -70,8 +70,4 @@ JavaScript: Core game logic.
 
 Vite: Build tool for fast and efficient development.
 
-<<<<<<< HEAD
 ## License
-=======
-## License
->>>>>>> 9d7193f (readme)
