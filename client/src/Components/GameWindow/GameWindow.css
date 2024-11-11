@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .game-logo {
@@ -16,4 +17,24 @@
   justify-content: space-around;
   min-width: 800px;
   max-width: 1000px;
+  height: 470px;
+}
+
+.drifting-text {
+  position: absolute;
+  white-space: nowrap; 
+  font-size: 4rem; 
+  top: 5%; 
+  right: -50%;
+  animation: drift-left 3.5s linear forwards;
+  z-index: 50;
+}
+
+@keyframes drift-left {
+  0% {
+    right: -50%; 
+  }
+  100% {
+    right: 150%;
+  }
 }

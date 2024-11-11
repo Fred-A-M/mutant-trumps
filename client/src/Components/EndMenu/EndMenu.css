@@ -21,4 +21,12 @@
 
 .winner-text {
   font-size: 50px;
+  animation: flash 1s infinite alternate;
+  opacity: 0;
+}
+
+@keyframes flash {
+  to {
+    opacity: 1;
+  }
 }

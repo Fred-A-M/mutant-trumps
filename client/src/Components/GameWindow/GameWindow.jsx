@@ -19,6 +19,7 @@ export default function GameWindow ({numCards, changeState}) {
   const [activePlayer, setActivePlayer] = useState(true);
   const [losingCard, setLosingCard] = useState(false);
   const [comparedAttribute, setComparedAttribute] = useState(null);
+  const [playerAnnouncement, setPlayerAnnouncement] = useState(false);
 
   function fetchCards() {
       const pack = cards;
@@ -62,7 +63,7 @@ export default function GameWindow ({numCards, changeState}) {
   }, [playerOneDeck, playerTwoDeck, decksInitialised])
 
   useEffect(() => {
-    if (!activePlayer) {
+    if (!activePlayer && !winner) {
       const timeout = setTimeout(() => {
         const best = bestAttribute(playerTwoCard);
         compareCards(best);
@@ -81,6 +82,7 @@ export default function GameWindow ({numCards, changeState}) {
         setLosingCard(true);
         setComparedAttribute(attribute + 'p1Win');
         setTimeout(() => {
+          if (!activePlayer) triggerAnnouncement();
           setPlayerOneDeck([...playerOneDeck.slice(1), playerTwoDeck[0], playerOneDeck[0]]);
           setPlayerTwoDeck(playerTwoDeck.slice(1));
           setLosingCard(false);
@@ -91,6 +93,7 @@ export default function GameWindow ({numCards, changeState}) {
         setLosingCard(true);
         setComparedAttribute(attribute + 'p2Win');
         setTimeout(() => {
+          if (activePlayer) triggerAnnouncement();
           setPlayerTwoDeck([...playerTwoDeck.slice(1), playerOneDeck[0], playerTwoDeck[0]]);
           setPlayerOneDeck(playerOneDeck.slice(1));
           setLosingCard(false);
@@ -101,12 +104,22 @@ export default function GameWindow ({numCards, changeState}) {
     }
   }
 
+  function triggerAnnouncement () {
+    setPlayerAnnouncement(true);
+    setTimeout(() => {
+      setPlayerAnnouncement(false)
+    }, 3500);
+  }
+
   return (
     <>
     <div className='game-window' >
-      <div className='game-logo'>
+      {!winner && <div className='game-logo'>
         <img src="./src/assets/logo.jpeg" alt="logo" width={100} />
-      </div>
+      </div>}
+      {playerAnnouncement && activePlayer && <div className="drifting-text">Player One&apos;s Turn</div>}
+      {playerAnnouncement && !activePlayer && <div className="drifting-text">CPU&apos;s Turn</div>}
+      <div className="drifting-text">Player One&apos;s Turn</div>
       {winner ? <EndMenu winner={winner} changeState={changeState} /> : 
       <div className='cards-container'>
         <PlayerOneComp cardList={playerOneDeck} compareCards={compareCards} card={playerOneCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} />

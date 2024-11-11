@@ -12,9 +12,6 @@
 }
 
 .cards-window {
-  /* border: 2px solid rgb(47, 47, 47);
-  border-radius: 10px; */
-  height: 500px;
-  width: 60%;
-  /* align-content: center; */
+  height: 100vh;
+  width: 100vw;
 }
