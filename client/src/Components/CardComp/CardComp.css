@@ -56,7 +56,7 @@
 .choices {
   display: flex;
   flex-direction: column;
-  width: 98%;
+  width: 90%;
 }
 
 .attribute {
@@ -70,7 +70,7 @@
 .attribute.active-hover:hover {
   /* border: 1px solid white; */
   background-color: rgba(0, 0, 0, 1);
-  font-weight: bold;
+  color:rgb(169, 166, 161);
   cursor: pointer;
 }
 

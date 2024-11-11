@@ -63,10 +63,11 @@ export default function GameWindow ({numCards, changeState}) {
 
   useEffect(() => {
     if (!activePlayer) {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         const best = bestAttribute(playerTwoCard);
         compareCards(best);
       }, 2000);
+      return () => clearTimeout(timeout);
     }
   }, [activePlayer, playerTwoCard]);
 
@@ -82,8 +83,8 @@ export default function GameWindow ({numCards, changeState}) {
         setTimeout(() => {
           setPlayerOneDeck([...playerOneDeck.slice(1), playerTwoDeck[0], playerOneDeck[0]]);
           setPlayerTwoDeck(playerTwoDeck.slice(1));
-          setActivePlayer(true);
           setLosingCard(false);
+          setActivePlayer(true);
           setComparedAttribute(null);
         }, 2500);
       } else if (playerOneValue < playerTwoValue) {
@@ -92,8 +93,8 @@ export default function GameWindow ({numCards, changeState}) {
         setTimeout(() => {
           setPlayerTwoDeck([...playerTwoDeck.slice(1), playerOneDeck[0], playerTwoDeck[0]]);
           setPlayerOneDeck(playerOneDeck.slice(1));
-          setActivePlayer(false);
           setLosingCard(false);
+          setActivePlayer(false);
           setComparedAttribute(null);
         }, 2500);
       }

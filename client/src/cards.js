@@ -18,13 +18,13 @@ export const cards = [
     imageURL: './src/assets/characters/JellyGrandma.jpeg'
   },
   {
-    name: 'Ganja Lapwing',
+    name: 'Athletic Lapwing',
     attributes: {
       size: 20,
       strength: 33,
       intelligence: 64
     },
-    imageURL: './src/assets/characters/GanjaLapwing.jpeg'
+    imageURL: './src/assets/characters/AthleticLapwing.jpeg'
   },
   {
     name: 'Broccoli Scot',
