@@ -26,33 +26,17 @@ export default function CardComp ({card, compareCards, comparedAttribute, active
           </div>
         </div>
         <div className='choices'>
-          <div className={`attribute 
-          ${player === 'player1' && activePlayer && 'active-hover'}
-          ${activePlayer && comparedAttribute === 'sizep1Win' && 'highlightp1WinP1Turn'}
-          ${activePlayer && comparedAttribute === 'sizep2Win' && 'highlightp2WinP1Turn'}
-          ${!activePlayer && comparedAttribute === 'sizep1Win' && 'highlightp1WinP2Turn'}
-          ${!activePlayer && comparedAttribute === 'sizep2Win' && 'highlightp2WinP2Turn'}`}
-          onClick={() => handleClick('size')}>
-            <div>Size:</div> <div>{card.attributes.size}</div>
-          </div>
-          <div className={`attribute 
-          ${player === 'player1' && activePlayer &&  'active-hover'}
-          ${activePlayer && comparedAttribute === 'strengthp1Win' && 'highlightp1WinP1Turn'}
-          ${activePlayer && comparedAttribute === 'strengthp2Win' && 'highlightp2WinP1Turn'}
-          ${!activePlayer && comparedAttribute === 'strengthp1Win' && 'highlightp1WinP2Turn'}
-          ${!activePlayer && comparedAttribute === 'strengthp2Win' && 'highlightp2WinP2Turn'}`}
-          onClick={() => handleClick('strength')}>
-            <div>Strength:</div> <div>{card.attributes.strength}</div>
-          </div>
-          <div className={`attribute 
-          ${player === 'player1' && activePlayer &&  'active-hover'}
-          ${activePlayer && comparedAttribute === 'intelligencep1Win' && 'highlightp1WinP1Turn'}
-          ${activePlayer && comparedAttribute === 'intelligencep2Win' && 'highlightp2WinP1Turn'}
-          ${!activePlayer && comparedAttribute === 'intelligencep1Win' && 'highlightp1WinP2Turn'}
-          ${!activePlayer && comparedAttribute === 'intelligencep2Win' && 'highlightp2WinP2Turn'}`}
-          onClick={() => handleClick('intelligence')}>
-            <div>Intelligence:</div> <div>{card.attributes.intelligence}</div>
-          </div>
+          {Object.entries(card.attributes).map(([key, value]) => (
+            <div key={key} className={`attribute 
+              ${player === 'player1' && activePlayer && 'active-hover'}
+              ${activePlayer && comparedAttribute === `${key}p1Win` && 'highlightp1WinP1Turn'}
+              ${activePlayer && comparedAttribute === `${key}p2Win` && 'highlightp2WinP1Turn'}
+              ${!activePlayer && comparedAttribute === `${key}p1Win` && 'highlightp1WinP2Turn'}
+              ${!activePlayer && comparedAttribute === `${key}p2Win` && 'highlightp2WinP2Turn'}`}
+              onClick={() => handleClick(key)}>
+                <div>{key[0].toUpperCase() + key.slice(1)}:</div> <div>{value}</div>
+              </div>
+          ))}
         </div>
       </div>
     </div>
