@@ -18,11 +18,9 @@ function changeCards (number) {
   return (
     <>
     <div className='main-container'>
-      <div className='cards-window'>
         {state === 'start' ?
         <StartMenu changeState={changeState} changeCards={changeCards} /> : 
         <GameWindow numCards={numCards} changeState={changeState} /> }
-      </div>
     </div>
     </>
   )

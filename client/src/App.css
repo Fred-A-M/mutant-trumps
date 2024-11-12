@@ -1,17 +1,5 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
 }
 
-.logo {
-  margin-bottom: 10px;
-}
-
-.cards-window {
-  height: 100vh;
-  width: 100vw;
-}

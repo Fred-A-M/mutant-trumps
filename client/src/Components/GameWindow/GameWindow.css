@@ -1,9 +1,9 @@
 .game-window {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
+  /* justify-content: center; */
+  /* height: 100vh; */
 }
 
 .game-logo {
@@ -23,18 +23,19 @@
 .drifting-text {
   position: absolute;
   white-space: nowrap; 
-  font-size: 4rem; 
-  top: 5%; 
-  right: -50%;
-  animation: drift-left 3.5s linear forwards;
+  font-size: 9rem; 
+  top: 40%; 
+  color: white;
+  transform: translateX(100vw); 
+  animation: smooth-drift 4s linear forwards; 
   z-index: 50;
 }
 
-@keyframes drift-left {
+@keyframes smooth-drift {
   0% {
-    right: -50%; 
+    transform: translateX(100vw); 
   }
   100% {
-    right: 150%;
+    transform: translateX(-100vw); 
   }
 }

@@ -20,6 +20,8 @@ export default function GameWindow ({numCards, changeState}) {
   const [losingCard, setLosingCard] = useState(false);
   const [comparedAttribute, setComparedAttribute] = useState(null);
   const [playerAnnouncement, setPlayerAnnouncement] = useState(false);
+  const [computerThinking, setComputerThinking] = useState(false);
+  const [changeToCPU, setChangeToCPU] = useState(false);
 
   function fetchCards() {
       const pack = cards;
@@ -54,7 +56,7 @@ export default function GameWindow ({numCards, changeState}) {
   useEffect(() => {
     if (decksInitialised) {
       if (playerOneDeck.length === 0) {
-        setWinner('Player Two Wins');
+        setWinner('CPU Wins');
       }
       if (playerTwoDeck.length === 0) {
         setWinner('Player One Wins')
@@ -63,15 +65,26 @@ export default function GameWindow ({numCards, changeState}) {
   }, [playerOneDeck, playerTwoDeck, decksInitialised])
 
   useEffect(() => {
+    const justChangedToCPU = changeToCPU ? 6000 : 3000;
     if (!activePlayer && !winner) {
       const timeout = setTimeout(() => {
         const best = bestAttribute(playerTwoCard);
+        setComputerThinking(false);
         compareCards(best);
-      }, 2000);
+        setChangeToCPU(false);
+      }, justChangedToCPU);
       return () => clearTimeout(timeout);
     }
   }, [activePlayer, playerTwoCard]);
 
+  function triggerAnnouncement () {
+    setPlayerAnnouncement(true);
+    if (activePlayer) {
+      setTimeout(() => {
+        setComputerThinking(true);
+      }, 4000);
+    }
+  }
 
   function compareCards(attribute) {
     const playerOneValue = playerOneCard.attributes[attribute];
@@ -89,26 +102,21 @@ export default function GameWindow ({numCards, changeState}) {
           setActivePlayer(true);
           setComparedAttribute(null);
         }, 2500);
-      } else if (playerOneValue < playerTwoValue) {
+      }
+      if (playerOneValue < playerTwoValue) {
         setLosingCard(true);
         setComparedAttribute(attribute + 'p2Win');
         setTimeout(() => {
-          if (activePlayer) triggerAnnouncement();
+          if (activePlayer) triggerAnnouncement(), setChangeToCPU(true);
           setPlayerTwoDeck([...playerTwoDeck.slice(1), playerOneDeck[0], playerTwoDeck[0]]);
           setPlayerOneDeck(playerOneDeck.slice(1));
           setLosingCard(false);
           setActivePlayer(false);
           setComparedAttribute(null);
+          if (!activePlayer) setComputerThinking(true);
         }, 2500);
       }
     }
-  }
-
-  function triggerAnnouncement () {
-    setPlayerAnnouncement(true);
-    setTimeout(() => {
-      setPlayerAnnouncement(false)
-    }, 3500);
   }
 
   return (
@@ -123,7 +131,7 @@ export default function GameWindow ({numCards, changeState}) {
       {winner ? <EndMenu winner={winner} changeState={changeState} /> : 
       <div className='cards-container'>
         <PlayerOneComp cardList={playerOneDeck} compareCards={compareCards} card={playerOneCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} />
-        <PlayerTwoComp cardList={playerTwoDeck} compareCards={compareCards} card={playerTwoCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} />
+        <PlayerTwoComp cardList={playerTwoDeck} compareCards={compareCards} card={playerTwoCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} computerThinking={computerThinking} />
       </div>}
     </div>
     </>

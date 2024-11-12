@@ -27,10 +27,21 @@
   position: relative;
 }
 
+.card-body, .trump-picture {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.card-body.visible, .trump-picture.visible {
+  opacity: 1;
+}
+
 .trump-picture {
   position: relative;
   align-items: center;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .trump-picture img {
@@ -39,18 +50,17 @@
   border-top-left-radius: 10px; 
   border-top-right-radius: 10px; 
   border-bottom: 2px solid rgb(88, 88, 88);
+  position: relative;
 }
 
 .title {
   font-size: x-large;
   position: absolute;
-  width: 90%;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  color: white;
+  bottom: 2%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .choices {
@@ -68,7 +78,6 @@
 }
 
 .attribute.active-hover:hover {
-  /* border: 1px solid white; */
   background-color: rgba(0, 0, 0, 1);
   color:rgb(169, 166, 161);
   cursor: pointer;
@@ -88,4 +97,24 @@
 
 .attribute.highlightp1WinP2Turn {
   color: rgb(255, 0, 0);
+}
+
+@keyframes redFlash {
+  100% {
+    color: rgb(255, 0, 0);
+  }
+}
+
+.redFlash {
+  animation: redFlash 0.5s steps(2) infinite;
+}
+
+@keyframes greenFlash {
+  100% {
+    color: rgb(60, 255, 0);
+  }
+}
+
+.greenFlash {
+  animation: greenFlash 0.5s steps(2) infinite;
 }

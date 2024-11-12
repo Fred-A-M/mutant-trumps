@@ -35,11 +35,11 @@ export const cards = [
   {
     name: 'Broccoli Scot',
     attributes: {
-      size: 36,
+      size: 61,
       strength: 82,
       intelligence: 62,
-      speed: 41,
-      intimidation: 71,
+      speed: 49,
+      intimidation: 85,
     },
     imageURL: './src/assets/characters/BroccoliScot.jpeg'
   },

@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  margin-top: 40vh;
 }
 
 .end-menu-button {
@@ -12,6 +11,8 @@
   border-radius: 15px;
   padding: 5px;
   background-color: rgb(34, 34, 34);
+  animation: flash 1s infinite alternate;
+  opacity: 0;
 }
 
 .end-menu-button:hover {
@@ -21,8 +22,6 @@
 
 .winner-text {
   font-size: 50px;
-  animation: flash 1s infinite alternate;
-  opacity: 0;
 }
 
 @keyframes flash {
