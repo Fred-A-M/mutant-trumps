@@ -126,8 +126,10 @@ export default function GameWindow ({numCards, changeState}) {
       <div className="drifting-text">Player One&apos;s Turn</div>
       {winner ? <EndMenu winner={winner} changeState={changeState} /> : 
       <div className='cards-container'>
-        <PlayerOneComp cardList={playerOneDeck} compareCards={compareCards} card={playerOneCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} />
-        <PlayerTwoComp cardList={playerTwoDeck} compareCards={compareCards} card={playerTwoCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} computerThinking={computerThinking} />
+        <div className='cards-grid'>
+          <PlayerOneComp cardList={playerOneDeck} compareCards={compareCards} card={playerOneCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} />
+          <PlayerTwoComp cardList={playerTwoDeck} compareCards={compareCards} card={playerTwoCard} activePlayer={activePlayer} losingCard={losingCard} comparedAttribute={comparedAttribute} computerThinking={computerThinking} />
+        </div>
       </div>}
     </div>
     </>

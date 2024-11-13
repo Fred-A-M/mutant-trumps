@@ -20,6 +20,20 @@
   height: 470px;
 }
 
+.cards-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 7vw;
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto; /* Specify rows if needed */
+    row-gap: 200px; /* Add spacing between rows */
+  }
+}
+
 .drifting-text {
   position: absolute;
   white-space: nowrap; 

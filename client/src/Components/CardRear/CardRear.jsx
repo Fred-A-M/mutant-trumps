@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './CardRear.css'
 export default function CardRear () {
 
