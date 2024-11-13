@@ -1,7 +1,7 @@
 # Mutant Trumps
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1df38f6b-0dd5-41e1-a5e8-9cc153487f06" width="300">
+  <img src="./src/assets/logo.png" width="300">
 </p>
 
 Mutant Trumps is a card game built with **React.js** and **JavaScript**, powered by **Vite**. In this game, Player 1 competes against the computer in a battle of mutant attributes. The goal is to strategically choose the attribute with the highest value to win the opponent's card. The game ends when one player collects all the cards.
