@@ -2,7 +2,8 @@
 
 
 body {
-  background-color: rgb(19, 2, 26);
+  background: linear-gradient(to bottom, rgb(38, 3, 59), black);
+  height: 100vh;
   color: rgb(255, 246, 231);
   font-family: "Faculty Glyphic", sans-serif;
 }

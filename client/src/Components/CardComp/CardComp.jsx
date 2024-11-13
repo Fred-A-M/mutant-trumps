@@ -2,22 +2,17 @@
 import { useEffect, useState } from 'react';
 import './CardComp.css'
 export default function CardComp ({card, compareCards, comparedAttribute, activePlayer, player, computerThinking}) {
-  const [highlightIndex, setHighlightIndex] = useState(0);
-  const [fadeCard, setFadeCard] = useState(false);
+  const [highlightAttribute, setHighlightAttribute] = useState(0);
 
   useEffect(() => {
     if (!card) return 
     const interval = setInterval(() => {
-      setHighlightIndex((prevIndex) =>
+      setHighlightAttribute((prevIndex) =>
         prevIndex === Object.keys(card.attributes).length - 1 ? 0 : prevIndex + 1
       );
     }, 300);
     return () => clearInterval(interval);
   }, [card]);
-
-  useEffect(() => {
-    setFadeCard(true);
-  }, [card])
 
   if (!card) {
     return <div>Loading...</div>;
@@ -31,12 +26,12 @@ export default function CardComp ({card, compareCards, comparedAttribute, active
 
   return (
     <>
-    <div className={`card-body ${fadeCard && 'visible'}`}>
+    <div className={`card-body`}>
       <div className='card-background'>
         <img src='./src/assets/CardBackground.jpeg' alt="logo"/>
       </div>
       <div className='card-content'>
-        <div className={`trump-picture ${fadeCard && 'visible'}`}>
+        <div className={`trump-picture`}>
           <img src={card.imageURL} alt="logo"/>
           <div className='title'>
             {card.name}
@@ -57,8 +52,8 @@ export default function CardComp ({card, compareCards, comparedAttribute, active
                 ${player === 'player2' && !activePlayer && comparedAttribute === `${key}p2Win` && 'highlightp2WinP2Turn'}`
               }
               style={
-                {backgroundColor: player === 'player2' && computerThinking && index === highlightIndex && 'rgba(0, 0, 0, 1)',
-                color: player === 'player2' && computerThinking && index === highlightIndex && 'rgb(169, 166, 161)'}
+                {backgroundColor: player === 'player2' && computerThinking && index === highlightAttribute && 'rgba(0, 0, 0, 1)',
+                color: player === 'player2' && computerThinking && index === highlightAttribute && 'rgb(169, 166, 161)'}
               }
               onClick={() => handleClick(key)}>
                 <div>{key[0].toUpperCase() + key.slice(1)}:</div> <div>{value}</div>

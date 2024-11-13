@@ -5,18 +5,19 @@ import './PlayerOneComp.css';
 
 export default function PlayerOneComp ({cardList, compareCards, card, activePlayer, losingCard, comparedAttribute}) {
   const offset = cardList.length * 6;
+  const pileSize = cardList.length - 1;
   const player = 'player1'
   return (
     <>
     <div className='card-container'>
       <div className='card-pile'>
-        {cardList.slice(1).map((i, index) => (
-          <div key={index} className="card-back" style={{ top: `${index * 6}px`, left: `${index * 6}px` }}><CardRear /></div>
-        ))}
+        {cardList.map((i, index) => index === pileSize ? 
+          (<div key={index} className='current-card' style={{ top: `${offset}px`, left: `${offset}px` }}>
+            {activePlayer || losingCard ? <CardComp card={card} player={player} compareCards={compareCards} activePlayer={activePlayer} comparedAttribute={comparedAttribute}/> : <CardRear/> }
+          </div>) :
+          <div key={index} className="card-back" style={{ top: `${index * 6}px`, left: `${index * 6}px` }}><CardRear/> </div>)}
       </div>
-      <div className='current-card' style={{ top: `${offset}px`, left: `${offset}px` }}>
-        {activePlayer || losingCard ? <CardComp card={card} player={player} compareCards={compareCards} activePlayer={activePlayer} comparedAttribute={comparedAttribute}/> : <CardRear /> }
-      </div>
+      
     </div>
     </>
   )
