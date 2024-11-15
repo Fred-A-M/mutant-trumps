@@ -42,10 +42,6 @@ export default function GameWindow ({numCards, changeState}) {
       setCardList(pack.slice(0, numCards));
   }
 
-  // useEffect(() =>{
-  //   fetchCards();
-  // }, []);
-
   useEffect(() => {
     if (cardList.length > 0) {
       let half = cardList.length / 2;
