@@ -134,6 +134,13 @@
   cursor: pointer;
 }
 
+@media (hover: none) {
+  .attribute.active-hover:hover {
+    background-color: rgba(0, 0, 0, 0.3);/* Disable hover effects */
+    color: rgb(255, 246, 231); /* Reset color */
+  }
+}
+
 .attribute.highlightp1WinP1Turn {
   color: rgb(60, 255, 0);
 }
