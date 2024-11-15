@@ -3,17 +3,24 @@
   border-radius: 10px;
   height: 460px;
   width: 310px;
-  align-items: center;
   background-color: rgb(30, 30, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   .card-body {
-    grid-template-columns: auto; 
-    grid-template-rows: auto auto;
-    row-gap: 200px;
+    height: 190px;
+    width: 305px;
   }
-} */
+}
+
+.card-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
 .card-background img {
   width: 100%;
@@ -35,6 +42,13 @@
   position: relative;
 }
 
+@media (max-width: 600px) {
+  .card-content {
+    margin: 5px;
+    flex-direction: row;
+  }
+}
+
 .trump-picture {
   position: relative;
   align-items: center;
@@ -43,10 +57,12 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  width: 100%;
 }
 
 .trump-picture img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-top-left-radius: 8px; 
   border-top-right-radius: 8px; 
@@ -54,6 +70,15 @@
   display: flex;
   justify-content: flex-start;
   position: relative;
+}
+
+@media (max-width: 600px) {
+  .trump-picture img {
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom: none;
+    border-right: 2px solid rgb(88, 88, 88);
+  }
 }
 
 .title {
@@ -67,11 +92,26 @@
   padding-right: 3%;
 }
 
+@media (max-width: 600px) {
+  .title {
+    font-size: medium;
+    bottom: 2%;
+    white-space: auto;
+  }
+}
+
 .choices {
   display: flex;
   flex-direction: column;
   width: 90%;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  .choices {
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 .attribute {
@@ -80,6 +120,12 @@
   justify-content: space-between;
   border-bottom: 2px solid rgb(88, 88, 88);
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .attribute {
+    width: 90%;
+  }
 }
 
 .attribute.active-hover:hover {

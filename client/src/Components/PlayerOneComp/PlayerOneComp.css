@@ -8,10 +8,17 @@
   position: relative;
 }
 
-.card-back {
-  position: absolute;
-}
-
+.card-back,
 .current-card {
   position: absolute;
+  top: var(--top-offset);
+  left: var(--left-offset);
+}
+
+/* Apply vertical layout when screen width is below 600px */
+@media (max-width: 600px) {
+  .card-back,
+  .current-card {
+    left: 0; /* Stack cards vertically by setting left to 0 */
+  }
 }

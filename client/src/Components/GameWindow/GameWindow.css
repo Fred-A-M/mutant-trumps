@@ -2,14 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  /* height: 100vh; */
 }
 
 .game-logo {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .game-logo img {
+    width: 75px; 
+  }
 }
 
 .cards-container {
@@ -23,14 +27,14 @@
 .cards-grid {
   display: grid;
   grid-template-columns: auto auto;
-  column-gap: 7vw;
+  column-gap: 10vw;
 }
 
 @media (max-width: 600px) {
   .cards-grid {
     grid-template-columns: auto; 
     grid-template-rows: auto auto; /* Specify rows if needed */
-    row-gap: 200px; /* Add spacing between rows */
+    row-gap: 7vh; /* Add spacing between rows */
   }
 }
 
@@ -51,5 +55,22 @@
   }
   100% {
     transform: translateX(-100vw); 
+  }
+}
+
+@media (max-width: 725px) {
+  .drifting-text {
+    font-size: 5rem; 
+    transform: translateX(150vw); 
+    animation: smooth-drift-mobile 4s linear forwards; 
+  }
+}
+
+@keyframes smooth-drift-mobile {
+  0% {
+    transform: translateX(150vw); 
+  }
+  100% {
+    transform: translateX(-150vw); 
   }
 }
