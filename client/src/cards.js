@@ -1,138 +1,3 @@
-// export const cards = [
-//   {
-//     name: 'Q-Tip Man',
-//     attributes: {
-//       size: 60,
-//       strength: 50,
-//       intelligence: 61,
-//       speed: 40,
-//       fright: 20,
-//     },
-//     imageURL: './characters/QtipMan.jpeg'
-//   },
-//   {
-//     name: 'Jelly Grandma',
-//     attributes: {
-//       size: 41,
-//       strength: 37,
-//       intelligence: 71,
-//       speed: 10,
-//       fright: 10,
-//     },
-//     imageURL: './characters/JellyGrandma.jpeg'
-//   },
-//   {
-//     name: 'Athletic Lapwing',
-//     attributes: {
-//       size: 20,
-//       strength: 33,
-//       intelligence: 64,
-//       speed: 90,
-//       fright: 15,
-//     },
-//     imageURL: './characters/AthleticLapwing.jpeg'
-//   },
-//   {
-//     name: 'Broccoli Scot',
-//     attributes: {
-//       size: 61,
-//       strength: 82,
-//       intelligence: 62,
-//       speed: 49,
-//       fright: 85,
-//     },
-//     imageURL: './characters/BroccoliScot.jpeg'
-//   },
-//   {
-//     name: 'Giant Preacher',
-//     attributes: {
-//       size: 91,
-//       strength: 69,
-//       intelligence: 15,
-//       speed: 5,
-//       fright: 62,
-//     },
-//     imageURL: './characters/GiantPreacher.jpeg'
-//   },
-//   {
-//     name: 'Pub Vampire',
-//     attributes: {
-//       size: 74,
-//       strength: 67,
-//       intelligence: 83,
-//       speed: 13,
-//       fright: 89,
-//     },
-//     imageURL: './characters/PubVamp.jpeg'
-//   },
-//   {
-//     name: 'Rat Lady',
-//     attributes: {
-//       size: 51,
-//       strength: 38,
-//       intelligence: 76,
-//       speed: 45,
-//       fright: 78,
-//     },
-//     imageURL: './characters/RatLady.jpeg'
-//   },
-//   {
-//     name: 'Eyelash',
-//     attributes: {
-//       size: 5,
-//       strength: 58,
-//       intelligence: 32,
-//       speed: 51,
-//       fright: 82,
-//     },
-//     imageURL: './characters/Eyelash.jpeg'
-//   },
-//   {
-//     name: 'Netflix Fiend',
-//     attributes: {
-//       size: 55,
-//       strength: 21,
-//       intelligence: 42,
-//       speed: 12,
-//       fright: 54,
-//     },
-//     imageURL: './characters/NetflixFiend.jpeg'
-//   },
-//   {
-//     name: 'Big Benny',
-//     attributes: {
-//       size: 100,
-//       strength: 93,
-//       intelligence: 7,
-//       speed: 48,
-//       fright: 39,
-//     },
-//     imageURL: './characters/BigBenny.jpeg'
-//   },
-//   {
-//     name: 'Chimney Penguin',
-//     attributes: {
-//       size: 34,
-//       strength: 66,
-//       intelligence: 60,
-//       speed: 62,
-//       fright: 56,
-//     },
-//     imageURL: './characters/ChimneyPenguin.jpeg'
-//   },
-//   {
-//     name: 'Accountant Eel',
-//     attributes: {
-//       size: 48,
-//       strength: 28,
-//       intelligence: 89,
-//       speed: 71,
-//       fright: 49,
-//     },
-//     imageURL: './characters/AccountantEel.jpeg'
-//   },
-// ];
-
 export const cards = [
   {
     name: 'Q-Tip Man',
@@ -162,7 +27,7 @@ export const cards = [
       size: 42,
       strength: 41,
       intelligence: 60,
-      speed: 55,
+      speed: 65,
       fright: 33,
     },
     imageURL: './characters/AthleticLapwing.jpeg'
@@ -170,11 +35,11 @@ export const cards = [
   {
     name: 'Broccoli Scot',
     attributes: {
-      size: 60,
-      strength: 50,
-      intelligence: 62,
+      size: 51,
+      strength: 61,
+      intelligence: 59,
       speed: 44,
-      fright: 39,
+      fright: 45,
     },
     imageURL: './characters/BroccoliScot.jpeg'
   },
@@ -183,7 +48,7 @@ export const cards = [
     attributes: {
       size: 65,
       strength: 47,
-      intelligence: 55,
+      intelligence: 21,
       speed: 37,
       fright: 42,
     },
@@ -196,7 +61,7 @@ export const cards = [
       strength: 48,
       intelligence: 64,
       speed: 35,
-      fright: 44,
+      fright: 60,
     },
     imageURL: './characters/PubVamp.jpeg'
   },
@@ -207,18 +72,18 @@ export const cards = [
       strength: 45,
       intelligence: 66,
       speed: 47,
-      fright: 40,
+      fright: 58,
     },
     imageURL: './characters/RatLady.jpeg'
   },
   {
     name: 'Eyelash',
     attributes: {
-      size: 40,
+      size: 10,
       strength: 49,
-      intelligence: 58,
+      intelligence: 28,
       speed: 48,
-      fright: 36,
+      fright: 59,
     },
     imageURL: './characters/Eyelash.jpeg'
   },
@@ -226,19 +91,19 @@ export const cards = [
     name: 'Netflix Fiend',
     attributes: {
       size: 46,
-      strength: 39,
+      strength: 19,
       intelligence: 57,
       speed: 36,
-      fright: 34,
+      fright: 43,
     },
     imageURL: './characters/NetflixFiend.jpeg'
   },
   {
     name: 'Big Benny',
     attributes: {
-      size: 64,
+      size: 70,
       strength: 51,
-      intelligence: 56,
+      intelligence: 18,
       speed: 38,
       fright: 32,
     },
@@ -247,7 +112,7 @@ export const cards = [
   {
     name: 'Chimney Penguin',
     attributes: {
-      size: 44,
+      size: 30,
       strength: 44,
       intelligence: 61,
       speed: 49,
