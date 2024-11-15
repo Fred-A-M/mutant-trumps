@@ -74,3 +74,13 @@
     transform: translateX(-150vw); 
   }
 }
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+  font-size: 24px;
+}

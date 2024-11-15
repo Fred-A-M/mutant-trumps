@@ -19,3 +19,17 @@ export function bestAttribute(card) {
     }
   }
 }
+
+export function preloadImages(imageURLs) {
+  return Promise.all(
+    imageURLs.map(
+      (url) =>
+        new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = url;
+          img.onload = resolve;
+          img.onerror = reject;
+        })
+    )
+  );
+}

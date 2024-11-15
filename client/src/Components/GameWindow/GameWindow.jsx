@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { shuffleArray, bestAttribute } from '../../functions';
+import { shuffleArray, bestAttribute, preloadImages } from '../../functions';
 import PlayerOneComp from '../PlayerOneComp/PlayerOneComp'
 import PlayerTwoComp from '../PlayerTwoComp/PlayerTwoComp'
 import EndMenu from '../EndMenu/EndMenu';
@@ -9,6 +9,7 @@ import './GameWindow.css'
 import { cards } from '../../cards';
 
 export default function GameWindow ({numCards, changeState}) {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [cardList, setCardList] = useState([]);
   const [playerOneDeck, setPlayerOneDeck] = useState([]);
   const [playerTwoDeck, setPlayerTwoDeck] = useState([]);
@@ -23,15 +24,27 @@ export default function GameWindow ({numCards, changeState}) {
   const [computerThinking, setComputerThinking] = useState(false);
   const [changeToCPU, setChangeToCPU] = useState(false);
 
+  useEffect(() => {
+    const imageURLs = cards.map((card) => card.imageURL);
+    preloadImages(imageURLs)
+      .then(() => {
+        setIsLoaded(true);
+        fetchCards();
+      })
+      .catch((error) => {
+        console.error('Error preloading images:', error);
+      });
+  }, []);
+
   function fetchCards() {
       const pack = cards;
       shuffleArray(pack)
       setCardList(pack.slice(0, numCards));
   }
 
-  useEffect(() =>{
-    fetchCards();
-  }, []);
+  // useEffect(() =>{
+  //   fetchCards();
+  // }, []);
 
   useEffect(() => {
     if (cardList.length > 0) {
@@ -43,7 +56,6 @@ export default function GameWindow ({numCards, changeState}) {
       setDecksInitialised(true);
     }
   }, [cardList]);
-
 
   useEffect(() => {
     setPlayerOneCard(playerOneDeck[0])
@@ -113,6 +125,10 @@ export default function GameWindow ({numCards, changeState}) {
         }, 2500);
       }
     }
+  }
+
+  if (!isLoaded) {
+    return <div className="loading-screen">Loading...</div>;
   }
 
   return (
