@@ -17,7 +17,7 @@ export default function StartMenu ({changeState, changeCards}) {
       Twelve Cards
       </h2>
       <div className='logo'>
-          <img src="./src/assets/logo.png" alt="logo" width={300} />
+          <img src="./logo.png" alt="logo" width={300} />
       </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ export const cards = [
       speed: 40,
       fright: 20,
     },
-    imageURL: './src/assets/characters/QtipMan.jpeg'
+    imageURL: './characters/QtipMan.jpeg'
   },
   {
     name: 'Jelly Grandma',
@@ -19,7 +19,7 @@ export const cards = [
       speed: 10,
       fright: 10,
     },
-    imageURL: './src/assets/characters/JellyGrandma.jpeg'
+    imageURL: './characters/JellyGrandma.jpeg'
   },
   {
     name: 'Athletic Lapwing',
@@ -30,7 +30,7 @@ export const cards = [
       speed: 90,
       fright: 15,
     },
-    imageURL: './src/assets/characters/AthleticLapwing.jpeg'
+    imageURL: './characters/AthleticLapwing.jpeg'
   },
   {
     name: 'Broccoli Scot',
@@ -41,7 +41,7 @@ export const cards = [
       speed: 49,
       fright: 85,
     },
-    imageURL: './src/assets/characters/BroccoliScot.jpeg'
+    imageURL: './characters/BroccoliScot.jpeg'
   },
   {
     name: 'Giant Preacher',
@@ -52,7 +52,7 @@ export const cards = [
       speed: 5,
       fright: 62,
     },
-    imageURL: './src/assets/characters/GiantPreacher.jpeg'
+    imageURL: './characters/GiantPreacher.jpeg'
   },
   {
     name: 'Pub Vampire',
@@ -63,7 +63,7 @@ export const cards = [
       speed: 13,
       fright: 89,
     },
-    imageURL: './src/assets/characters/PubVamp.jpeg'
+    imageURL: './characters/PubVamp.jpeg'
   },
   {
     name: 'Rat Lady',
@@ -74,7 +74,7 @@ export const cards = [
       speed: 45,
       fright: 78,
     },
-    imageURL: './src/assets/characters/RatLady.jpeg'
+    imageURL: './characters/RatLady.jpeg'
   },
   {
     name: 'Eyelash',
@@ -85,7 +85,7 @@ export const cards = [
       speed: 51,
       fright: 82,
     },
-    imageURL: './src/assets/characters/Eyelash.jpeg'
+    imageURL: './characters/Eyelash.jpeg'
   },
   {
     name: 'Netflix Fiend',
@@ -96,7 +96,7 @@ export const cards = [
       speed: 12,
       fright: 54,
     },
-    imageURL: './src/assets/characters/NetflixFiend.jpeg'
+    imageURL: './characters/NetflixFiend.jpeg'
   },
   {
     name: 'Big Benny',
@@ -107,7 +107,7 @@ export const cards = [
       speed: 48,
       fright: 39,
     },
-    imageURL: './src/assets/characters/BigBenny.jpeg'
+    imageURL: './characters/BigBenny.jpeg'
   },
   {
     name: 'Chimney Penguin',
@@ -118,7 +118,7 @@ export const cards = [
       speed: 62,
       fright: 56,
     },
-    imageURL: './src/assets/characters/ChimneyPenguin.jpeg'
+    imageURL: './characters/ChimneyPenguin.jpeg'
   },
   {
     name: 'Accountant Eel',
@@ -129,6 +129,6 @@ export const cards = [
       speed: 71,
       fright: 49,
     },
-    imageURL: './src/assets/characters/AccountantEel.jpeg'
+    imageURL: './characters/AccountantEel.jpeg'
   },
 ];
