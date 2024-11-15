@@ -24,7 +24,7 @@
 .cards-container {
   display: flex;
   justify-content: space-around;
-  height: 75%
+  height: 460px
 }
 
 .cards-grid {
