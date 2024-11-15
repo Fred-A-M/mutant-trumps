@@ -11,9 +11,13 @@
   margin-bottom: 15px;
 }
 
+.game-logo :hover {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .game-logo img {
-    width: 75px; 
+    width: 90px; 
   }
 }
 

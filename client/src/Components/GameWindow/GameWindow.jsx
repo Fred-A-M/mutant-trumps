@@ -131,7 +131,7 @@ export default function GameWindow ({numCards, changeState}) {
     <>
     <div className='game-window' >
       {!winner && <div className='game-logo'>
-        <img src="./logo.png" alt="logo" width={100} />
+        <img src="./logo.png" alt="logo" width={100} onClick={() => changeState('start')} />
       </div>}
       {playerAnnouncement && activePlayer && <div className="drifting-text">Player One&apos;s Turn</div>}
       {playerAnnouncement && !activePlayer && <div className="drifting-text">CPU&apos;s Turn</div>}
