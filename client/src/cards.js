@@ -6,7 +6,7 @@ export const cards = [
       strength: 46,
       intelligence: 63,
       speed: 42,
-      fright: 30,
+      terror: 30,
     },
     imageURL: './characters/QtipMan.jpeg'
   },
@@ -17,7 +17,7 @@ export const cards = [
       strength: 43,
       intelligence: 65,
       speed: 40,
-      fright: 28,
+      terror: 28,
     },
     imageURL: './characters/JellyGrandma.jpeg'
   },
@@ -28,7 +28,7 @@ export const cards = [
       strength: 41,
       intelligence: 60,
       speed: 65,
-      fright: 33,
+      terror: 33,
     },
     imageURL: './characters/AthleticLapwing.jpeg'
   },
@@ -39,7 +39,7 @@ export const cards = [
       strength: 61,
       intelligence: 59,
       speed: 44,
-      fright: 45,
+      terror: 45,
     },
     imageURL: './characters/BroccoliScot.jpeg'
   },
@@ -50,7 +50,7 @@ export const cards = [
       strength: 47,
       intelligence: 21,
       speed: 37,
-      fright: 42,
+      terror: 42,
     },
     imageURL: './characters/GiantPreacher.jpeg'
   },
@@ -61,7 +61,7 @@ export const cards = [
       strength: 48,
       intelligence: 64,
       speed: 35,
-      fright: 60,
+      terror: 60,
     },
     imageURL: './characters/PubVamp.jpeg'
   },
@@ -72,7 +72,7 @@ export const cards = [
       strength: 45,
       intelligence: 66,
       speed: 47,
-      fright: 58,
+      terror: 58,
     },
     imageURL: './characters/RatLady.jpeg'
   },
@@ -83,7 +83,7 @@ export const cards = [
       strength: 49,
       intelligence: 28,
       speed: 48,
-      fright: 59,
+      terror: 59,
     },
     imageURL: './characters/Eyelash.jpeg'
   },
@@ -94,7 +94,7 @@ export const cards = [
       strength: 19,
       intelligence: 57,
       speed: 36,
-      fright: 43,
+      terror: 43,
     },
     imageURL: './characters/NetflixFiend.jpeg'
   },
@@ -105,7 +105,7 @@ export const cards = [
       strength: 51,
       intelligence: 18,
       speed: 38,
-      fright: 32,
+      terror: 32,
     },
     imageURL: './characters/BigBenny.jpeg'
   },
@@ -116,7 +116,7 @@ export const cards = [
       strength: 44,
       intelligence: 61,
       speed: 49,
-      fright: 35,
+      terror: 35,
     },
     imageURL: './characters/ChimneyPenguin.jpeg'
   },
@@ -127,7 +127,7 @@ export const cards = [
       strength: 40,
       intelligence: 68,
       speed: 46,
-      fright: 37,
+      terror: 37,
     },
     imageURL: './characters/AccountantEel.jpeg'
   },
