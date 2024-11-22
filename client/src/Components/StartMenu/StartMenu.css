@@ -18,3 +18,41 @@
   color: greenyellow;
   cursor: pointer;
 }
+
+.logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+.logo-image {
+  position: absolute;
+  right: 14%;
+  top: 13%
+}
+
+.logo img {
+  width: 400px;
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    width: 97vw;
+  }
+}
+
+.rotating-image {
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+

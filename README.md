@@ -48,7 +48,7 @@ The app will start on http://localhost:5173 (or the next available port if 5173 
 ## How to Play
 Choose the size of the deck from the available options.
 
-Player 1 goes first. On your turn, select an attribute (e.g., Size, Strength, or Intelligence) that you believe is higher than the computer's card for that attribute.
+Player 1 goes first. On your turn, select an attribute that you believe is higher than the computer's card for that attribute.
 
 If your chosen attribute is higher than the computer's, you win the round and take the computer's card.
 
@@ -68,6 +68,4 @@ React.js: Frontend library for building user interfaces.
 
 JavaScript: Core game logic.
 
-Vite: Build tool for fast and efficient development.
-
-## License
+Vite: Build tool.

@@ -7,7 +7,8 @@ export default function StartMenu ({changeState, changeCards}) {
     <>
     <div className='start-menu-container'>
         <div className='logo'>
-            <img src="./logo.png" alt="logo" width={300} />
+          <img src="./Rules.png" alt="rules" className='rotating-image' />
+          <img src="./logo.png" alt="logo" className='logo-image' style={{width: '70%'}}/>
         </div>
         <div className='game-choices'>
           <h2 className='start-menu-button' onClick={() => {changeState('game'); changeCards(12)} }>
